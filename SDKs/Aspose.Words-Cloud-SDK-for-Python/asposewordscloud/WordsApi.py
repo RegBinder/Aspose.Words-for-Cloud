@@ -5008,15 +5008,15 @@ class WordsApi(object):
             resourcePath = resourcePath.replace("{" + "name" + "}" , str(allParams['name']))
         else:
             resourcePath = re.sub("[&?]name.*?(?=&|\\?|$)", "", resourcePath)
-            
-        print "resourcePath" + resourcePath
+
+        print("resourcePath" + resourcePath)
 
         if 'sectionIndex' in allParams and allParams['sectionIndex'] is not None:
-            resourcePath = resourcePath.replace("{" + "sectionIndex" + "}" , str(allParams['sectionIndex']))
+            resourcePath = resourcePath.replace("{" + "sectionIndex" + "}", str(allParams['sectionIndex']))
         else:
             resourcePath = re.sub("[&?]sectionIndex.*?(?=&|\\?|$)", "", resourcePath)
-        
-        print "resourcePath" + resourcePath
+
+        print("resourcePath" + resourcePath)
         if 'storage' in allParams and allParams['storage'] is not None:
             resourcePath = resourcePath.replace("{" + "storage" + "}" , str(allParams['storage']))
         else:
