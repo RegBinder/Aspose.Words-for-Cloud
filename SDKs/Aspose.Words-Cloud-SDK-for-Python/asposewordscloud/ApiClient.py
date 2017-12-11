@@ -4,9 +4,9 @@ import sys
 import os
 import re
 import string
-import urllib
-import urllib2
-import httplib
+import urllib.request, urllib.parse, urllib.error
+import urllib.request, urllib.error, urllib.parse
+import http.client
 import json
 import datetime
 import mimetypes
@@ -15,11 +15,11 @@ import string
 import hmac
 import hashlib
 import requests
-import httplib
+import http.client
 import logging
 
-from models import *
-from urlparse import urlparse
+from .models import *
+from urllib.parse import urlparse
 from requests.utils import quote
 
 
@@ -44,7 +44,7 @@ class ApiClient(object):
         self.debug = debug
 
         if self.debug == True:
-            httplib.HTTPConnection.debuglevel = 1
+            http.client.HTTPConnection.debuglevel = 1
             logging.basicConfig() # you need to initialize logging, otherwise you will not see anything from requests
             logging.getLogger().setLevel(logging.DEBUG)
             requests_log = logging.getLogger("requests.packages.urllib3")
@@ -78,18 +78,18 @@ class ApiClient(object):
         if 'file' in qry_data:
             del qry_data['file']
         
-        for (key, val) in qry_data.iteritems():
+        for (key, val) in qry_data.items():
             if(path.find('{' + key.lower() + '}') >= 0):
                 path = path.replace('{' + key.lower() + '}', val)
                 del_dict[key] = val
 
-        for (key, val) in del_dict.iteritems():
+        for (key, val) in del_dict.items():
             del qry_data[key]
 
         path = path.rstrip('/')
 
         if qry_data:
-            return path + '?' + urllib.urlencode(qry_data)
+            return path + '?' + urllib.parse.urlencode(qry_data)
         else:
             return path
 
@@ -129,7 +129,7 @@ class ApiClient(object):
         mergedHeaderParams.update(headerParams)
         headers = {}
         if mergedHeaderParams:
-            for param, value in mergedHeaderParams.iteritems():
+            for param, value in mergedHeaderParams.items():
                 headers[param] = ApiClient.sanitizeForSerialization(value)
 
         if self.cookie:
@@ -153,7 +153,7 @@ class ApiClient(object):
                     headers['Content-type'] = 'multipart/form-data; boundary={0}'.format(self.boundary)
                     headers['Content-length'] = str(len(data))
                 else:
-                    data = urllib.urlencode(postData)
+                    data = urllib.parse.urlencode(postData)
         else:
             raise Exception('Method ' + method + ' is not recognized.')
 
@@ -205,7 +205,7 @@ class ApiClient(object):
         """
         if isinstance(obj, type(None)):
             return None
-        elif isinstance(obj, (str, int, long, float, bool, file)):
+        elif isinstance(obj, (str, int, float, bool, file)):
             return obj
         elif isinstance(obj, list):
             return [ApiClient.sanitizeForSerialization(subObj) for subObj in obj]
@@ -219,10 +219,10 @@ class ApiClient(object):
             # and attributes which value is not None.
             # Convert attribute name to json key in model definition for request.
                 objDict = {obj.attributeMap[key]: val
-                   for key, val in obj.__dict__.iteritems()
+                   for key, val in obj.__dict__.items()
                    if key != 'swaggerTypes' and key != 'attributeMap' and val is not None}
             return {key: ApiClient.sanitizeForSerialization(val)
-                 for (key, val) in objDict.iteritems()}
+                 for (key, val) in objDict.items()}
 
     def buildMultipartFormData(self, postData, files):
         def escape_quotes(s):
@@ -231,7 +231,7 @@ class ApiClient(object):
         lines = []
 
 
-        for name, value in postData.items():
+        for name, value in list(postData.items()):
             lines.extend((
                 '--{0}'.format(self.boundary),
                 'Content-Disposition: form-data; name="{0}"'.format(escape_quotes(name)),
@@ -239,7 +239,7 @@ class ApiClient(object):
                 str(value),
              ))
 
-        for name, filepath in files.items():
+        for name, filepath in list(files.items()):
             f = open(filepath, 'r')
             filename = filepath.split('/')[-1]
             mimetype = mimetypes.guess_type(filename)[0] or 'application/octet-stream'
@@ -302,14 +302,14 @@ class ApiClient(object):
             else:  # not a native type, must be model class
                 objClass = eval(objClass + '.' + objClass)
 
-        if objClass in [int, long, float, dict, list, str, bool]:
+        if objClass in [int, int, float, dict, list, str, bool]:
             return objClass(obj)
         elif objClass == datetime:
             return self.__parse_string_to_datetime(obj)
 
         instance = objClass()
 
-        for attr, attrType in instance.swaggerTypes.iteritems():
+        for attr, attrType in instance.swaggerTypes.items():
             logging.debug(attr + ',' + attrType)
             if obj is not None and instance.attributeMap[attr] in obj and type(obj) in [list, dict]:
                 value = obj[instance.attributeMap[attr]]
@@ -318,7 +318,7 @@ class ApiClient(object):
                     try:
                         value = attrType(value)
                     except UnicodeEncodeError:
-                        value = unicode(value)
+                        value = str(value)
                     except TypeError:
                         value = value
                     setattr(instance, attr, value)
@@ -373,7 +373,7 @@ class ApiException(Exception):
         self.message = message
 
 
-class MethodRequest(urllib2.Request):
+class MethodRequest(urllib.request.Request):
     def __init__(self, *args, **kwargs):
         """Construct a MethodRequest. Usage is the same as for
         `urllib2.Request` except it also takes an optional `method`
@@ -382,8 +382,8 @@ class MethodRequest(urllib2.Request):
 
         if 'method' in kwargs:
             self.method = kwargs.pop('method')
-        return urllib2.Request.__init__(self, *args, **kwargs)
+        return urllib.request.Request.__init__(self, *args, **kwargs)
 
     def get_method(self):
-        return getattr(self, 'method', urllib2.Request.get_method(self))
+        return getattr(self, 'method', urllib.request.Request.get_method(self))
 
