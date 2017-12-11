@@ -35,12 +35,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'bookmarkName', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentBookmarkByName" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -117,12 +117,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentBookmarks" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -199,12 +199,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'bookmarkName', 'filename', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostUpdateDocumentBookmark" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -287,12 +287,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocument" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -367,12 +367,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'format', 'storage', 'folder', 'outPath'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentWithFormat" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -459,12 +459,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostAppendDocument" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -551,12 +551,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'cleanup', 'filename', 'storage', 'folder', 'useWholeParagraphAsRegion', 'withRegions', 'file'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostExecuteTemplate" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -655,12 +655,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostInsertPageNumbers" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -732,12 +732,12 @@ class WordsApi(object):
         allParams = dict.fromkeys([])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostLoadWebDocument" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -784,12 +784,12 @@ class WordsApi(object):
         allParams = dict.fromkeys([])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostRunTask" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -850,12 +850,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'format', 'ffrom', 'to', 'zipOutput', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostSplitDocument" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -950,12 +950,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['format', 'outPath', 'file'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutConvertDocument" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1016,12 +1016,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['useNonMergeFields'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutDocumentFieldNames" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1081,12 +1081,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['withRegions', 'cleanup', 'file', 'data'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutExecuteMailMergeOnline" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1156,12 +1156,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['cleanup', 'useWholeParagraphAsRegion', 'withRegions', 'file'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutExecuteTemplateOnline" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1232,12 +1232,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteDocumentFields" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1310,12 +1310,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostUpdateDocumentFields" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1396,12 +1396,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'propertyName', 'filename', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteDocumentProperty" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1484,12 +1484,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentProperties" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1562,12 +1562,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'propertyName', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentProperty" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1650,12 +1650,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'propertyName', 'filename', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutUpdateDocumentProperty" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1742,12 +1742,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteUnprotectDocument" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1824,12 +1824,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentProtection" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1904,12 +1904,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostChangeDocumentProtection" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -1990,12 +1990,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutProtectDocument" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2074,12 +2074,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostDocumentSaveAs" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2188,12 +2188,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'resultFile', 'useAntiAliasing', 'useHighQualityRendering', 'imageBrightness', 'imageColorMode', 'imageContrast', 'numeralFormat', 'pageCount', 'pageIndex', 'paperColor', 'pixelFormat', 'resolution', 'scale', 'tiffCompression', 'dmlRenderingMode', 'dmlEffectsRenderingMode', 'tiffBinarizationMethod', 'storage', 'folder', 'zipOutput', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutDocumentSaveAsTiff" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2372,12 +2372,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentStatistics" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2450,12 +2450,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteDocumentWatermark" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2540,12 +2540,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'rotationAngle', 'image', 'storage', 'folder', 'file'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostInsertDocumentWatermarkImage" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2642,12 +2642,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'filename', 'text', 'rotationAngle', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostInsertDocumentWatermarkText" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2738,12 +2738,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'objectIndex', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentDrawingObjectByIndex" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2824,12 +2824,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'objectIndex', 'format', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentDrawingObjectByIndexWithFormat" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2914,12 +2914,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'objectIndex', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentDrawingObjectImageData" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -2998,12 +2998,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'objectIndex', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentDrawingObjectOleData" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3080,12 +3080,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentDrawingObjects" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3164,12 +3164,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'sectionIndex', 'paragraphIndex', 'formfieldIndex', 'destFileName', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteFormField" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3270,12 +3270,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'sectionIndex', 'paragraphIndex', 'formfieldIndex', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetFormField" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3374,12 +3374,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'sectionIndex', 'paragraphIndex', 'formfieldIndex', 'destFileName', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostFormField" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3484,12 +3484,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'sectionIndex', 'paragraphIndex', 'insertBeforeNode', 'destFileName', 'storage', 'folder', 'body'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PutFormField" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3588,12 +3588,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'headersFootersTypes', 'filename', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteHeadersFooters" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3678,12 +3678,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'hyperlinkIndex', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentHyperlinkByIndex" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3760,12 +3760,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentHyperlinks" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3836,12 +3836,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteDocumentMacros" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -3914,12 +3914,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'useNonMergeFields', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentFieldNames" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -4008,12 +4008,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'withRegions', 'mailMergeDataFile', 'cleanup', 'filename', 'storage', 'folder', 'useWholeParagraphAsRegion', 'file'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method PostDocumentExecuteMailMerge" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -4116,12 +4116,12 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'index', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method DeleteParagraphFields" % key)
             params[key] = val
         
-        for (key, val) in params.iteritems():
+        for (key, val) in params.items():
             if key in allParams:
                 allParams[key] = val
         
@@ -4200,7 +4200,7 @@ class WordsApi(object):
         allParams = dict.fromkeys(['name', 'index', 'storage', 'folder'])
 
         params = locals()
-        for (key, val) in params['kwargs'].iteritems():
+        for (key, val) in params['kwargs'].items():
             if key not in allParams:
                 raise TypeError("Got an unexpected keyword argument '%s' to method GetDocumentParagraph" % key)
             params[key] = val
