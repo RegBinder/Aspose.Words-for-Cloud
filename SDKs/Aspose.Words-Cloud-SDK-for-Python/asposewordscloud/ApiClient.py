@@ -105,7 +105,7 @@ class ApiClient(object):
             url_part_to_sign = url.scheme + "://" + url.netloc + url.path + "?" + url.query
 
         logging.debug("url_part_to_sign" + url_part_to_sign + "apiKey" + apiKey)
-        signature = hmac.new(apiKey, url_part_to_sign, hashlib.sha1).digest().encode('base64')[:-1]
+        signature = hmac.new(b'apiKey', url_part_to_sign, hashlib.sha1).digest().encode('base64')[:-1]
         signature = re.sub('[=_-]', '', signature)
         signature = quote(signature, safe='')
 
