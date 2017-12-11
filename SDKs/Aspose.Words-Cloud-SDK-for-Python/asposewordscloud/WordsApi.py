@@ -5,8 +5,8 @@ import os
 import urllib
 import json
 import re
-from models import *
-from ApiClient import ApiException
+from .models import *
+from .ApiClient import ApiException
 
 
 class WordsApi(object):
