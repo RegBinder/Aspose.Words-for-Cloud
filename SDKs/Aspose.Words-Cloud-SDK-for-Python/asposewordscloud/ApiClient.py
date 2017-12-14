@@ -94,6 +94,18 @@ class ApiClient(object):
         else:
             return path
 
+    def decode_base64(swlf, data):
+        """Decode base64, padding being optional.
+
+        :param data: Base64 data as an ASCII byte string
+        :returns: The decoded byte string.
+
+        """
+        missing_padding = len(data) % 4
+        if missing_padding != 0:
+            data += b'=' * (4 - missing_padding)
+        return base64.b64decode(data)
+
     def sign(self, url_to_sign, appSid, apiKey):
 
         url_to_sign = url_to_sign.replace(" ", "%20");
@@ -106,7 +118,7 @@ class ApiClient(object):
             url_part_to_sign = url.scheme + "://" + url.netloc + url.path + "?" + url.query
 
         logging.debug("url_part_to_sign" + url_part_to_sign + "apiKey" + apiKey)
-        signature = base64.b64decode(hmac.new(bytes(apiKey.encode()), b'url_part_to_sign.encode', hashlib.sha1).digest())[:-1]
+        signature = self.decode_base64(hmac.new(bytes(apiKey.encode()), b'url_part_to_sign.encode', hashlib.sha1).digest())[:-1]
         signature = re.sub('[=_-]', '', signature)
         signature = quote(signature, safe='')
 
