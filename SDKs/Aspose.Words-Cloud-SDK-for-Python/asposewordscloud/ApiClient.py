@@ -17,6 +17,7 @@ import hashlib
 import requests
 import http.client
 import logging
+import base64
 
 from .models import *
 from urllib.parse import urlparse
@@ -105,7 +106,7 @@ class ApiClient(object):
             url_part_to_sign = url.scheme + "://" + url.netloc + url.path + "?" + url.query
 
         logging.debug("url_part_to_sign" + url_part_to_sign + "apiKey" + apiKey)
-        signature = hmac.new(b'apiKey', url_part_to_sign, hashlib.sha1).digest().encode('base64')[:-1]
+        signature = base64.b64encode(hmac.new(bytes(apiKey.encode()) , b'url_part_to_sign.encode', hashlib.sha1).digest())[:-1]
         signature = re.sub('[=_-]', '', signature)
         signature = quote(signature, safe='')
 
