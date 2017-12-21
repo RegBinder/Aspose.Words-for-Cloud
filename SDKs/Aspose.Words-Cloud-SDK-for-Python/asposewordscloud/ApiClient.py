@@ -19,7 +19,7 @@ import http.client
 import logging
 import base64
 
-from .models import *
+from asposewordscloud.models import *
 from urllib.parse import urlparse
 from requests.utils import quote
 
@@ -118,7 +118,9 @@ class ApiClient(object):
             url_part_to_sign = url.scheme + "://" + url.netloc + url.path + "?" + url.query
 
         logging.debug("url_part_to_sign" + url_part_to_sign + "apiKey" + apiKey)
-        signature = self.decode_base64(hmac.new(bytes(apiKey.encode()), b'url_part_to_sign.encode', hashlib.sha1).digest())[:-1]
+        url_part_to_sign_bytes = bytes(url_part_to_sign.encode())
+        hmac_val = hmac.new(bytes(apiKey.encode()), url_part_to_sign_bytes, hashlib.sha1).digest()
+        signature = base64.b64encode(hmac_val).decode()
         signature = re.sub('[=_-]', '', signature)
         signature = quote(signature, safe='')
 
@@ -218,7 +220,7 @@ class ApiClient(object):
         """
         if isinstance(obj, type(None)):
             return None
-        elif isinstance(obj, (str, int, float, bool, file)):
+        elif isinstance(obj, (str, int, float, bool, obj)):
             return obj
         elif isinstance(obj, list):
             return [ApiClient.sanitizeForSerialization(subObj) for subObj in obj]
